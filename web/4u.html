@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+		    //r=a(1-sinθ)
+		    var canvas = document.getElementById('canvas');
+			alert(canvas);
+		    var context2D = canvas.getContext('2d');
+		    context2D.clearRect(0, 0, canvas.width, canvas.height);
+		    for (var i = 0; i <= 90; i++) {
+		        for (var j = 0; j <= 90; j++) {
+		            r = Math.PI / 45 * i * (1 - Math.sin(Math.PI / 45 * j)) * 19;
+		            x = r * Math.cos(Math.PI / 45 * j) * Math.sin(Math.PI / 45 * i) + canvas.width / 2;
+		            y = -r * Math.sin(Math.PI / 45 * j) + canvas.height / 4;
+		            context2D.fillStyle='rgba(255,0,0,0.5)';
+		            context2D.fillRect (x, y, 2, 2); 
+		            context2D.fillStyle='rgba(255,0,0,0.5)';
+		            context2D.fillRect (x, y, 1, 1); 
+		          }
+		      }
+		</script>
+		
+		
+	</head>
+	<body>
+		<span></span><canvas id="canvas" width="350" height="350">
+		   <p>Your browser does not support the canvas element.</p>
+		</canvas> <span></span>
+	</body>
+</html>
